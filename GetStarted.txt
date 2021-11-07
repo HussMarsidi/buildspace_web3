@@ -7,5 +7,9 @@ npx hardhat
 npm install --save-dev @nomiclabs/hardhat-waffle ethereum-waffle chai @nomiclabs/hardhat-ethers ethers
 
 npx hardhat accounts --> will get the Ethereum addresses
-npx hardhat compile
-npx hardhat test
+npx hardhat compile --> try to compile solidity files
+npx hardhat test --> run test file 
+npx hardhat run {scripts/deploy.js} --> run specific script file
+
+npx hardhat node --> start localhost 
+npx hardhat run scripts/deploy.js --network localhost --> will deploy the code into localhost network
