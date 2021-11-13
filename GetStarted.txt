@@ -13,3 +13,30 @@ npx hardhat run {scripts/deploy.js} --> run specific script file
 
 npx hardhat node --> start localhost 
 npx hardhat run scripts/deploy.js --network localhost --> will deploy the code into localhost network
+
+npx hardhat run scripts/deploy.js --network rinkeby --> to deploy in network rinkeby, but need to configure in hardhat.config.js
+eg
+```shell
+module.exports = {
+  solidity: "0.8.0",
+  networks: {
+    rinkeby: {
+      url: "URL_WEBSITE",
+      accounts: [
+        METAMASK_ACCOUNT_PERSONAL,
+      ],
+    },
+  },
+};
+```
+
+https://replit.com/@HussMarsidi/waveportal-starter-project#README.md --> replit link
+
+Workflow
+1. Test run first --> npx hardhat run {directory to file}
+2. deploy to server --> npx hardhat run {directory deploy file} --network rinkeby
+3. deployment will generate abi artifacts file and contract address
+4. get contract address from 
+  WavePortal address:  0xbabFC4A1154Af4F886Eb05464710Cea43C205521 (example)
+5. get abi file from artifacts/contract/{contract file}.json
+4. read all data from the contract address
